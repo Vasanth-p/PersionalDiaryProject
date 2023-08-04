@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(./image/1508669.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.password{
+  margin: 30px auto;
+  display: block;
+  padding: 20px;
+  width: 350px;
+  text-align: center;
+  height: auto;
+}
+.user{
+  width: 100px;
+  height: 100px;
+  padding: 50px;
+  font-size: 100px;
+  background-color: rgba(15, 15, 15, 0.2);
+  border-radius: 100px;
+  border: 1px solid rgb(137, 133, 133);
+
+}
+.display_name{
+  color: white;
+  text-shadow: 0px 0px 10px black;
+  font-size: 40px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.input_password{
+  display: flex;
+  padding: 10px auto;
+  padding-bottom: 20px;
+}
+.pin{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid rgb(7, 7, 7);
+  background-color: rgba(183, 183, 183, 0.3);
+  color: rgb(0, 0, 0);
+}
+.pin_entry{
+  background-color: rgba(152, 151, 151, 0.3);
+  border: 1px solid rgb(6, 6, 6);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 47px;
+  width: 40px;
+  padding: 10px;
+  float: right;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.pin_entry:hover{
+  background-color: rgb(17, 17, 17,0.6);
+}
+.reset{
+  margin: 20px auto;
+  display: block;
+  padding: 70px;
+  width: 350px;
+  text-align: center;
+  height: auto;
+  background: rgba(235, 231, 231, 0.4);
+  border-radius: 20px;
+  border: 1px solid rgba(2, 2, 2, 0.5);
+}
+.resetform .display_name{
+  color: rgb(0, 0, 0);
+  text-transform:uppercase;
+  font-size: medium;
+}
+.resetform .pin{
+  border-radius: 5px;
+  margin: 20px auto;
+}
+.submit_reset{
+  display: block;
+  margin: 0 auto;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+a {
+  color: rgb(44, 43, 43);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #010101;
+}
+

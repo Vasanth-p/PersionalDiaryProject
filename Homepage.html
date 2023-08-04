@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Diary</title>
+    <script src="https://kit.fontawesome.com/0a682b9dd5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Homepage.css">
+</head>
+
+<body>
+    <div class="password">
+        <div id="passwordForm">
+            <i class="fa-regular fa-user user" style="color: #ffffff;"></i>
+            <p class="display_name">Tom</p>
+            <div class="input_password">
+                <input class="pin" inputmode="numeric" id="passwordInput" type="password" maxlength="4" placeholder="PIN">
+                <button class="pin_entry" onclick="checkPassword()"><i class="fa-solid fa-arrow-right" style="color: #f4f6fb;"></i></button>
+            </div>
+            <a onclick="sendResetCode()">Forgot password?</a>
+        </div>
+    </div>
+    <div class="reset" id="resetForm" style="display: none;">
+        <div class="resetform" >
+            <p class="display_name">Reset Password</p>
+            <input class="pin" id="resetCodeInput" type="text" placeholder="Reset Code">
+            <input class="pin" id="newPasswordInput" type="password" placeholder="New Password">
+            <button class="submit_reset" onclick="resetPassword()">Submit</button>
+        </div>
+    </div>
+
+
+    <script>
+        const correctPassword = "1234";
+
+        function checkPassword() {
+            const passwordInput = document.getElementById("passwordInput");
+            const enteredPassword = passwordInput.value;
+            const correctPassword = "1234"; 
+
+            if (enteredPassword === correctPassword) {
+                window.location.href = "home.html";
+            } else {
+                alert("Incorrect password!");
+                var websiteName = "MyWebsite";
+            }
+            passwordInput.value = "";
+        }
+
+        document.getElementById("passwordInput").addEventListener("keyup", function (event) {
+            if (event.key === "Enter") {
+                checkPassword();
+            }
+        });
+
+
+        function sendResetCode() {
+            const resetCode = generateResetCode();
+            const email = "user@example.com";
+            document.getElementById("passwordForm").style.display = "none";
+            document.getElementById("resetForm").style.display = "block";
+        }
+        function resetPassword() {
+            const resetCodeInput = document.getElementById("resetCodeInput");
+            const newPasswordInput = document.getElementById("newPasswordInput");
+            const resetCode = resetCodeInput.value;
+            const newPassword = newPasswordInput.value;
+            if (validateResetCode(resetCode)) {
+                alert("Password reset successful!");
+                document.getElementById("homepage").style.display = "block";
+                document.getElementById("resetForm").style.display = "none";
+            } else {
+                alert("Invalid reset code!");
+            }
+            resetCodeInput.value = "";
+            newPasswordInput.value = "";
+        }
+        function generateResetCode() {
+            const resetCode = Math.floor(100000 + Math.random() * 900000);
+            return resetCode.toString();
+        }
+
+        function validateResetCode(code) {
+            const correctResetCode = "123456";
+            return code === correctResetCode;
+        }
+
+
+    </script>
+</body>
+
+</html>
